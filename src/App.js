@@ -9,14 +9,22 @@ class App extends Component {
 
   state = {
     drivers: [],
-    animation: 'hey', 
+    // animation: 'hey', 
     cars: 0,
   }
 
-  componentDidMount() {
+  getDriver = () => {
     API.GetAPI(API_LINK).then( data => this.setState( {drivers: data.drivers} ) )
   }
-  
+
+  componentDidMount() {
+    this.getDriver()
+  }
+
+  // shouldComponentUpdate(nextProps, nextState) {
+  //   return this.state.cars != nextState.cars;
+  // }
+
   handleChange = (e, { name, value }) => this.setState({ [name]: value })
 
   render() {
@@ -27,8 +35,8 @@ class App extends Component {
             label='Choose amount of cars to display'
             name='cars to display'
             onChange={this.handleChange}
-            // options={this.state.options}
-            value={this.state.animation}
+            // // options={this.state.options}
+            // value={this.state.animation}
           />
           <Form.Input
             label={`Cars: ${this.state.cars} `}
