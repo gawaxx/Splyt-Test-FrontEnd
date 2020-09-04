@@ -10,11 +10,11 @@ class App extends Component {
   state = {
     drivers: [],
     // animation: 'hey', 
-    cars: 0,
+    cars: 1,
   }
 
   getDriver = () => {
-    API.GetAPI(API_LINK).then( data => this.setState( {drivers: data.drivers} ) )
+    API.GetAPI(API_LINK(this.state.cars)).then( data => this.setState( {drivers: data.drivers} ) )
   }
 
   componentDidMount() {
@@ -22,7 +22,9 @@ class App extends Component {
   }
 
   // shouldComponentUpdate(nextProps, nextState) {
-  //   return this.state.cars != nextState.cars;
+  //   if (this.state.cars != nextState.cars) {
+  //     this.getDriver()
+  //   }
   // }
 
   handleChange = (e, { name, value }) => this.setState({ [name]: value })
