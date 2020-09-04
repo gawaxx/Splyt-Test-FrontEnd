@@ -2,21 +2,50 @@ import React, { Component } from 'react';
 import './App.css';
 import SimpleMap from './Containers/SimpleMap';
 import { API, API_LINK } from './Adapters/API'
+import { Form, Grid, Image, Transition } from 'semantic-ui-react'
+
 
 class App extends Component {
 
   state = {
-    drivers: []
+    drivers: [],
+    animation: 'hey', 
+    cars: 0,
   }
 
   componentDidMount() {
     API.GetAPI(API_LINK).then( data => this.setState( {drivers: data.drivers} ) )
   }
+  
+  handleChange = (e, { name, value }) => this.setState({ [name]: value })
 
   render() {
     return (
-      <div className="App">
-        <SimpleMap drivers={this.state.drivers} />
+      <div> 
+        <div className="Slider">
+        <Form.Select
+            label='Choose amount of cars to display'
+            name='cars to display'
+            onChange={this.handleChange}
+            // options={this.state.options}
+            value={this.state.animation}
+          />
+          <Form.Input
+            label={`Cars: ${this.state.cars} `}
+            min={1}
+            max={50}
+            name='cars'
+            onChange={this.handleChange}
+            step={1}
+            type='range'
+            value={this.state.cars}
+          />
+        </div>
+
+        <div className="App">
+          <SimpleMap drivers={this.state.drivers} />
+        </div>
+
       </div>
     );
   }
