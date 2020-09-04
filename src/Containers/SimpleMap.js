@@ -12,12 +12,17 @@ const SimpleMap = (props) => {
           defaultCenter={center}
           defaultZoom={zoom}
         >
-          <Marker
-            lat={51.5049375}
-            lng={-0.0964509}
-            name="My Marker"
-            color="blue"
-          />
+
+          {
+            props.drivers.map(driver =>
+              <Marker
+                lat={driver.location.latitude}
+                lng={driver.location.longitude}
+                name="My Marker"
+                color="blue"
+              />
+            )
+          }
 
         </GoogleMapReact>
       </div>

@@ -1,12 +1,22 @@
 import React, { Component } from 'react';
 import './App.css';
 import SimpleMap from './Containers/SimpleMap';
+import { API, API_LINK } from './Adapters/API'
 
 class App extends Component {
+
+  state = {
+    drivers: []
+  }
+
+  componentDidMount() {
+    API.GetAPI(API_LINK).then( data => this.setState( {drivers: data.drivers} ) )
+  }
+
   render() {
     return (
       <div className="App">
-        <SimpleMap />
+        <SimpleMap drivers={this.state.drivers} />
       </div>
     );
   }
