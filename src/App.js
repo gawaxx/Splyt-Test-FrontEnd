@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { Map, GoogleApiWrapper } from 'google-maps-react';
+import { API, API_LINK } from './Adapters/API'
 
 const mapStyles = {
   width: '100%',
@@ -7,6 +8,11 @@ const mapStyles = {
 };
 
 export class MapContainer extends Component {
+
+  componentDidMount() {
+    API.GetAPI(API_LINK).then( data => console.log(data) )
+  }
+
   render() {
     return (
       <Map
