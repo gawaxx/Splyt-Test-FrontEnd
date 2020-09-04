@@ -18,7 +18,7 @@ const SimpleMap = (props) => {
               <Marker
                 lat={driver.location.latitude}
                 lng={driver.location.longitude}
-                name="My Marker"
+                name={driver.driver_id}
                 color="blue"
               />
             )
