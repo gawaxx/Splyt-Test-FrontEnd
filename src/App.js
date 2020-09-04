@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Map, GoogleApiWrapper } from 'google-maps-react';
+import { Map, GoogleApiWrapper, InfoWindow, Marker } from 'google-maps-react';
 import { API, API_LINK } from './Adapters/API'
 
 const mapStyles = {
@@ -9,8 +9,15 @@ const mapStyles = {
 
 export class MapContainer extends Component {
 
+  state = {
+    showingInfoWindow: false,  //Hides or the shows the infoWindow
+    activeMarker: {},          //Shows the active marker upon click
+    selectedPlace: {},          //Shows the infoWindow to the selected place upon a marker
+    drivers: []
+  };
+
   componentDidMount() {
-    API.GetAPI(API_LINK).then( data => console.log(data) )
+    API.GetAPI(API_LINK).then( drivers => this.setState( drivers.drivers ) )
   }
 
   render() {
