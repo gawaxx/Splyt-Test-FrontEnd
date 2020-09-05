@@ -14,7 +14,7 @@ It features a map, which is centered on Splyt's london HQ, and has a slider with
 
 # How-to
 
-**Fork** and **Clone** this repo, then run **npm install** and then **npm start**
+**Fork** and **Clone** this repo, then run **npm install** and then **npm start**, the app should open on **http://localhost:3000**
 
 # Additional libraries you might need
 
