@@ -21,11 +21,11 @@ class App extends Component {
     this.getDriver()
   }
 
-  // shouldComponentUpdate(nextProps, nextState) {
-  //   if (this.state.cars != nextState.cars) {
-  //     this.getDriver()
-  //   }
-  // }
+  componentDidUpdate(prevProp, prevState) {
+    if (this.state.cars != prevState.cars) {
+      this.getDriver()
+    }
+  }
 
   handleChange = (e, { name, value }) => this.setState({ [name]: value })
 
