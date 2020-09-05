@@ -4,7 +4,7 @@ Welcome to the frontend of the splyt code challenge.
 
 # How to
 
-**Fork** and **Clone** this repo, then run **npm start**
+**Fork** and **Clone** this repo, then run **npm install** and then **npm start**
 
 # Additional libraries you might need
 
