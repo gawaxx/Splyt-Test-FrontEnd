@@ -16,6 +16,6 @@ Some functional components do use hooks, however no class component makes use of
 
 # Additional libraries you might need
 
-Alongside this project I used **google-map-react**, **semantic-ui-css**, **semantic-ui-react** they should be present in the package.json and install with npm install, however if they don't, you will have to manually install them: npm install --save google-map-react semantic-ui-css semantic-ui-react
+Alongside this project I used **google-map-react**, **semantic-ui-css**, **semantic-ui-react** they should be present in the package.json and installed with npm install, however if they don't, you will have to manually install them: npm install --save google-map-react semantic-ui-css semantic-ui-react
 
 And a third-party website called https://cors-anywhere.herokuapp.com/, which helped me circle around CORS issues.
