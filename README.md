@@ -1,6 +1,8 @@
 # Splyt-Test-Frontend 
 
-Welcome to the frontend of the splyt code challenge.
+Welcome to the frontend of the Splyt code challenge.
+
+This was done following the react-map Splyt challenge and is my own interpretation of the code challenge. I tried to follow it as best as I could. I decided to use a mix of class components and functional components, depending on the component functionality.
 
 # How to
 
