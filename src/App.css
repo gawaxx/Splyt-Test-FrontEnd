@@ -1,5 +1,7 @@
 .Slider {
+  font-weight: 700;
   text-align: center;
+  height: 5vh;
 }
 
 input {
