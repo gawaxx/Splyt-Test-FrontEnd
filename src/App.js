@@ -30,30 +30,26 @@ class App extends Component {
   render() {
     const { drivers, cars } = this.state
     return (
-      <div>
-        <div className="Slider">
-          <Form.Select
-            label='Choose amount of cars to display'
-            name='cars to display'
-            onChange={this.handleChange}
-          />
-          <Form.Input
-            label={`Cars: ${cars} `}
-            min={1}
-            max={50}
-            name='cars'
-            onChange={this.handleChange}
-            step={1}
-            type='range'
-            value={cars}
-          />
-        </div>
-
         <div className="App">
+          <div className="Slider">
+            <Form.Select
+              label='Choose amount of cars to display'
+              name='cars to display'
+              onChange={this.handleChange}
+            />
+            <Form.Input
+              label={`Cars: ${cars} `}
+              min={1}
+              max={50}
+              name='cars'
+              onChange={this.handleChange}
+              step={1}
+              type='range'
+              value={cars}
+            />
+          </div>
           <SimpleMap drivers={drivers} />
         </div>
-
-      </div>
     );
   }
 }
