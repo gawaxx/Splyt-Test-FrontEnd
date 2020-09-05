@@ -2,8 +2,7 @@ import React, { Component } from 'react';
 import './App.css';
 import SimpleMap from './Containers/SimpleMap';
 import { API, API_LINK } from './Adapters/API'
-import { Form, Grid, Image, Transition } from 'semantic-ui-react'
-
+import { Form } from 'semantic-ui-react'
 
 class App extends Component {
 
@@ -21,7 +20,7 @@ class App extends Component {
   }
 
   componentDidUpdate(prevProp, prevState) {
-    if (this.state.cars != prevState.cars) {
+    if (this.state.cars !== prevState.cars) {
       this.getDriver()
     }
   }
@@ -29,28 +28,29 @@ class App extends Component {
   handleChange = (e, { name, value }) => this.setState({ [name]: value })
 
   render() {
+    const { drivers, cars } = this.state
     return (
-      <div> 
+      <div>
         <div className="Slider">
-        <Form.Select
+          <Form.Select
             label='Choose amount of cars to display'
             name='cars to display'
             onChange={this.handleChange}
           />
           <Form.Input
-            label={`Cars: ${this.state.cars} `}
+            label={`Cars: ${cars} `}
             min={1}
             max={50}
             name='cars'
             onChange={this.handleChange}
             step={1}
             type='range'
-            value={this.state.cars}
+            value={cars}
           />
         </div>
 
         <div className="App">
-          <SimpleMap drivers={this.state.drivers} />
+          <SimpleMap drivers={drivers} />
         </div>
 
       </div>
