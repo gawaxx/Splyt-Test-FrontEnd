@@ -18,4 +18,4 @@ Some functional components do use hooks, however no class component makes use of
 
 Alongside this project I used **google-map-react**, **semantic-ui-css**, **semantic-ui-react** they should be present in the package.json and installed with npm install, however if they don't, you will have to manually install them: npm install --save google-map-react semantic-ui-css semantic-ui-react
 
-And a third-party website called https://cors-anywhere.herokuapp.com/, which helped me circle around CORS issues.
+And a third-party website called https://cors-anywhere.herokuapp.com/, which helped me circle around CORS issues. However I am limited to 200 calls per 60 minutes, as a result the app may stop refreshing if you move the slider a lot. I would've tried to setup my own proxy, but considering this was a react only challenge, I decided not to go this route.
