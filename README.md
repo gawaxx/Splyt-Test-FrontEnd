@@ -6,6 +6,8 @@ This was done following the react-map Splyt challenge and is my own interpretati
 
 Some functional components do use hooks, however no class component makes use of hooks, as I know you cannot use hooks inside of class components.
 
+It features a map, which is centered on Splyt's london HQ, and has a slider with a range of 1-50 that lets you choose how many taxis you wish to see.
+
 ![alt text][Demo GIF]
 
 [Demo GIF]: ./public/SplytMapTry10.gif "Demo Gif"
