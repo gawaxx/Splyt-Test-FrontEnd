@@ -2,12 +2,16 @@ import React from 'react';
 import './Marker.css';
 
 const Marker = (props) => {
-    const { color, name } = props;
+    const { id } = props;
     return (
-      <div className="marker" 
-        style={{ backgroundColor: color, cursor: 'pointer'}}
-        title={name}
-      />
+      <div>
+        <div
+          className="pin bounce"
+          style={{cursor: 'pointer' }}
+          title={`car id: ${id}`}
+        />
+        <div className="pulse" />
+      </div>
     );
   };
 
