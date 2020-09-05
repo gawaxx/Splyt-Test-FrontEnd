@@ -30,7 +30,6 @@ class App extends Component {
   render() {
     const { drivers, cars } = this.state
     return (
-      <div>
         <div className="App">
           <div className="Slider">
             <Form.Select
@@ -51,8 +50,6 @@ class App extends Component {
           </div>
           <SimpleMap drivers={drivers} />
         </div>
-
-      </div>
     );
   }
 }
