@@ -32,7 +32,7 @@ const SimpleMap = (props) => {
               <Marker
                 lat={driver.location.latitude}
                 lng={driver.location.longitude}
-                name={driver.driver_id}
+                id={driver.driver_id}
                 key={driver.driver_id}
               />
             )
